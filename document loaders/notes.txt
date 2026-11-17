@@ -1,0 +1,20 @@
+# GenAI Document Loading Study Notes
+
+## Introduction to Document Loaders
+Document loaders are foundational components in Generative AI pipelines that convert various file formats (PDF, CSV, TXT, HTML) into plain text or structured documents. They serve as the first step in **Retrieval-Augmented Generation (RAG)** systems, ensuring AI models have access to external, relevant data.
+
+## Common File Types Supported
+- **Text Files (.txt)**: Plain text, logs, or notes. Loaded using `TextLoader` in LangChain. 
+- **PDFs**: Scanned documents or formatted reports. Require OCR or text extraction tools.
+- **CSV/Excel**: Tabular data that needs to be converted into readable text chunks.
+- **HTML/Web Pages**: Web scraping or local HTML files for content ingestion.
+
+## Key Libraries
+- **LangChain**: Uses `TextLoader`, `PyPDFLoader`, and `DirectoryLoader` to ingest data.
+- **LlamaIndex**: Uses `SimpleDirectoryReader` for flexible file handling.
+- **Haystack**: Uses `TextFileToDocument` and specialized converters for complex formats. 
+
+## Best Practices
+1. **Metadata Handling**: Always include source file paths and tags in metadata for traceability.
+2. **Chunking**: After loading, split large documents into smaller chunks for effective embedding and retrieval.
+3. **Error Handling**: Implement checks for unsupported file types or corrupted files during the loading phase.   
